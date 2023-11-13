@@ -1,0 +1,91 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+.nombretienda {
+    text-align: center;
+}
+.tienda {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 30px 10px;
+    border-radius: 10px;
+    background-color: rgb(2, 44, 5);
+    text-align: center;
+}
+.carrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url("carrito2.png");
+    background-repeat: no-repeat;
+    background-position: 0%, 0%;
+    background-color: azure;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 1200px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1px;
+    position: sticky;
+    top: -1px;
+}
+.carrito img {
+    width: 70px;
+}
+.almacen {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    width: 1200px;
+}
+.producto {
+    background-color: rgb(227, 243, 165);
+    height: 210px;
+    width: 180px;
+    border-radius: 10px;
+    padding: 1px;
+}
+.imagen img {
+    width: 140px;
+    object-fit: cover;
+}
+.precio {
+    height: 20px;
+}
+body {
+    background-color: rgb(240, 193, 101);
+}
+.hide {
+    display: none;
+}
+#dejada {
+    background-color: aquamarine;
+    border: solid 2px black;
+    width: 500px;
+    height: 170px;
+}
+#dejada img {
+    width: 70;
+}
+#eliminar {
+    background-color: rgb(227, 243, 165);
+    background-image: url("papelera2.png");
+    background-repeat: no-repeat;
+    background-position: 55%, 55%;
+    border: 1px solid black;
+    width: 100px;
+    height: 170px;    
+}
