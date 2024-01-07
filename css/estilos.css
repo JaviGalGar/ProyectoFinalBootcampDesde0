@@ -1,11 +1,15 @@
 html {
     box-sizing: border-box;
+
 }
 *, *::before, *::after {
     box-sizing: inherit;
 }
 .nombretienda {
     text-align: center;
+    color: azure;
+    background-color: rgb(84, 196, 92);
+    padding: 20px 0;
 }
 .tienda {
     display: flex;
@@ -13,53 +17,48 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 30px 10px;
-    border-radius: 10px;
+    padding: 80px auto;
     background-color: rgb(2, 44, 5);
-    text-align: center;
 }
 .carrito {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-image: url("carrito2.png");
-    background-repeat: no-repeat;
-    background-position: 0%, 0%;
-    background-color: azure;
-    margin-bottom: 10px;
-    height: 200px;
-    width: 1200px;
+    background-color: rgb(2, 44, 5);
     border-radius: 10px;
     text-align: center;
-    padding: 1px;
     position: sticky;
     top: -1px;
 }
 .carrito img {
+    width: 140px;
+}
+.ticketcompra img {
     width: 70px;
+    padding: auto;
 }
 .almacen {
+    background-color: rgb(2, 44, 5);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 10px;
-    width: 1200px;
+    padding: 20px 0;
+    gap: 20px;
 }
 .producto {
     background-color: rgb(227, 243, 165);
-    height: 210px;
-    width: 180px;
+    height: 160px;
+    width: 100px;
     border-radius: 10px;
-    padding: 1px;
+    padding: 10px;
 }
 .imagen img {
-    width: 140px;
+    height: 120px;
     object-fit: cover;
 }
 .precio {
@@ -73,19 +72,35 @@ body {
 }
 #dejada {
     background-color: aquamarine;
-    border: solid 2px black;
-    width: 500px;
+    padding: 10px 10px;
     height: 170px;
+    width: 170px;
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: center;
 }
 #dejada img {
     width: 70;
 }
 #eliminar {
     background-color: rgb(227, 243, 165);
-    background-image: url("papelera2.png");
-    background-repeat: no-repeat;
-    background-position: 55%, 55%;
-    border: 1px solid black;
-    width: 100px;
-    height: 170px;    
+    height: 170px; 
+    width: 170px;  
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+#displaycompra {
+    background-color: rgb(227, 243, 165);
+    height: auto;
+    border: 2px solid rgb(230, 100, 7);
+    overflow: hidden;
+}
+.instrucciones {
+    background-color: rgb(2, 44, 5);
+    color: azure;
+    padding: 60px;
+}
+table {
+    width: 100%;
 }
