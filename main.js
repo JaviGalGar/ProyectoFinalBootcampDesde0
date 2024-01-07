@@ -67,16 +67,26 @@ const listaProductos = [
     }
 ];
 
+/*Rellenar datos de productos disponibles*/
+
 for(let i = 1; i <= listaProductos.length; i++) {
     document.getElementById(`precio${i}`).innerText = `Precio: ${listaProductos[i-1].precio} €/${listaProductos[i-1].cantidad}`; 
 }
+
+/*Inicializar costes totales cesta y array costes artículo*/
+let totalCost = 0;
+let arrayCost = new Array(listaProductos.length);
+for(let i = 1; i <= listaProductos.length; i++){
+    arrayCost[i-1] = 0;
+}
+
+/*Poner artículos en la cesta*/
 
 const productos = [...document.querySelectorAll(".imagen")];
 
 productos.forEach( producto => {
     producto.addEventListener('dragstart', dragStart);
 });
-
 
 function dragStart(e) {
     e.dataTransfer.setData("text/plain", e.target.id)
@@ -105,29 +115,66 @@ function drop(e) {
     const idcopiada = e.dataTransfer.getData("text/plain");
     const draggable = document.getElementById(idcopiada);
     const idcomprada = draggable.id;
+    const pruebaid = idcomprada.replace("producto", "product");
+    console.log("pruebaid: " + pruebaid);
     const numid = idcomprada.slice(-1);
 
-    cesta.appendChild(draggable.cloneNode(true));
-    const lista = document.getElementById("listacompra");
-    const cantidadind = document.getElementById(`cantidad${numid}`);
+    const lista = document.getElementById("tablacompra");
 
     for(let i = 1; i <= listaProductos.length; i++) {
+
         if (idcomprada === listaProductos[i-1].id) {
+            console.log("idcomprada = " + idcomprada);
+            const nuevaid = draggable.outerHTML.replace("producto", "product");
             const precioind = listaProductos[i-1].precio;
-            lista.innerHTML = lista.innerHTML + `<p class="${idcomprada}">${listaProductos[i-1].nombre} Cantidad: X  Coste= ${(precioind * cantidadind.value).toFixed(2)}€</p>`
+
+            var tBodyPrin = document.getElementById("tablaprincipal");
+            var newRow = tBodyPrin.insertRow(-1);
+            var newInputId = `cantidad` + `${numid}`;
+            var newCostId = `cost` + `${numid}`;
+
+            newRow.setAttribute("id", `fila${listaProductos[i-1].nombre}`);
+            var nuevaClase = `fila${listaProductos[i-1].nombre}`;
+
+            newRow.innerHTML = `<td>${nuevaid}</td>
+            <td>${listaProductos[i-1].nombre}</td>
+            <td><input id="${newInputId}" type="text" onChange="calculodinero(this.value,${precioind},${newCostId},${numid})"></td>
+            <td>${precioind} €/${listaProductos[i-1].cantidad}</td>
+            <td id="${newCostId}" class"productcost">${(precioind * 0).toFixed(2)}€</td>`;
+
+            /*Crear eventListener al meter en la cesta*/
+            const draggable2 = document.getElementById(pruebaid);
+            draggable2.addEventListener('dragstart', dragStart2);
         }
     }
 }
 
-const productos2 = [...document.querySelectorAll("#dejada")];
+/*Calcular precio de cada artículo al escribir cantidad a comprar*/
+function calculodinero (cantidad,preciounidad,costetotal,posicion) {
+    costetotal.value = (cantidad * preciounidad).toFixed(2);
+    costetotal.innerHTML = costetotal.value + "€";
+    arrayCost[posicion-1] = costetotal.value;
+    actualizaPrecio();
+}
 
-productos2.forEach( producto => {
-    producto.addEventListener('dragstart', dragStart2);
-});
+/*Actualizar precio total cesta compra al añadir o quitar elemento*/
+function actualizaPrecio() {
+    totalCost = 0;
 
+    for(let i = 1; i <= listaProductos.length; i++) {
+        totalCost = (parseFloat(totalCost) + parseFloat(arrayCost[i-1])).toFixed(2);
+    }
+
+    const totalSum = document.getElementById("Sumatorio");
+    totalSum.value = totalCost;
+    totalSum.innerText = totalCost + "€";
+}
+
+/*Quitar artículos de la cesta*/
 
 function dragStart2(e) {
-    e.dataTransfer.setData("text/plain", e.target.id)
+    e.dataTransfer.setData("text/plain", e.target.id);
+    console.log("añadido evento!");
 }
 
 const eliminarProd = document.getElementById("eliminar");
@@ -150,15 +197,20 @@ function dragLeave2(e) {
 }
 
 function drop2(e) {
-    const idcopiada = e.dataTransfer.getData("text/plain");
-    const draggable = document.getElementById(idcopiada);
-    const ideliminada = draggable.id;
-
-    const lista = document.getElementById("listacompra");
-    const itemborrado = document.getElementsByClassName(ideliminada);
-    lista.removeChild(itemborrado[0]);
+    const idcopiada2 = e.dataTransfer.getData("text/plain");
+    const draggable2 = document.getElementById(idcopiada2);
+    const ideliminada2 = draggable2.id;
+    const idborrada2 = ideliminada2.slice(-1);
+    console.log(idborrada2);
     
-    const carritoactual = document.getElementById("dejada");
-    const itemnoquerido = document.getElementById(idcopiada);
-    carritoactual.removeChild(itemnoquerido);
+    /*Borrar fila del producto en la tabla de compra*/
+    const lista2 = document.getElementById("tablaprincipal");
+    const itemborrado2 = document.getElementById(draggable2.className);
+    lista2.removeChild(itemborrado2);
+
+    /*Actualizar array de coste de productos*/
+    arrayCost[idborrada2-1] = 0;
+
+    actualizaPrecio()
+
 }

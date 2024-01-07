@@ -4,139 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Proyecto tienda</title>
 </head>
 <body>
-    <div class="nombretienda">
+    <div class="nombretienda container-fluid">
         <h1>Del campo a la casa</h1>
     </div>
-
-    <div class="tienda">
-        <div class="carrito">
-            <div id="dejada"></div>
-            <div id="eliminar"></div>
-            <div id="displaycompra">
-                <p>Cesta</p>
-                <div id="listacompra"></div>
-                <div id="subtotal"></div>
-            </div>
+    <div class="instrucciones">
+        <h5>
             
+            
+            <p>Para comprar, simplemente arrastra el producto hasta la zona de compra de color azul celeste.</p>
+            <p>Una vez en la cesta selecciona la cantidad de producto que quieres adquirir (en el precio puedes ver si se vende por unidades o por Kg).</p>
+            <p>Si quieres quitar algún producto puedes arrastrarlo hasta la papelera.</p>
+        
+        
+        </h5>
+    </div>
+    <div class="tienda container-fluid">
+        <div class="row carrito container-fluid justify-content-center">
+                <div id="dejada" class="col-4 col-md-2 justify-content-center align-items-center">
+                    <img id="carrito" src="images/carrito.png" alt="Cesta compra">
+                </div>
+                <div id="eliminar" class="col-4 col-md-2 justify-content-center align-items-center">
+                    <img id="papelera" src="images/papelera.png" alt="Papelera">
+                </div>
+                        
         </div>
-        <div class="almacen">
-            <div class="producto">
+        <div class="ticketcompra">
+            <div id="displaycompra">
+                <table id="tablacompra" class="table table-success table-striped table-hover justify-content-center align-items-center">
+                    <tr class="primeraFila">
+                        <th scope="col"></td>
+                        <th scope="col">Producto</td>
+                        <th scope="col">Cantidad</td>
+                        <th scope="col">Precio</td>
+                        <th scope="col">Coste</td>
+                    </tr>
+                    <tbody id="tablaprincipal">
+                        
+                    </tbody>
+                    <tr class="Preciototal">
+                        <td></td>
+                        <th>Precio total:</th>
+                        <td id="Sumatorio"> 0€ </td>
+                    </tr> 
+                </table>
+            </div>    
+        </div>
+        <div class="row almacen row-cols-2 row-cols-md-6 row-cols-xxl-12">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto1" src="images/tomate2.png" alt="Tomate" draggable="true">
+                    <img id="producto1" class="filaTomate" src="images/tomate1.png" alt="Tomate" draggable="true">
                 </div>
                 <div id="precio1">
                 </div>
-                <div>
-                    Cantidad a comprar (Kg):<input id="cantidad1" type="text" width="30%">
-                </div>
             </div>
 
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto2" src="images/patata2.png" alt="Patata" draggable="true">
+                    <img id="producto2" class="filaPatata" src="images/patata1.png" alt="Patata" draggable="true">
                 </div>
                 <div id="precio2">
                 </div>
-                <div>
-                    Cantidad a comprar (Kg):<input id="cantidad2" type="text" width="30%">
-                </div>
+
             </div>
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto3" src="images/lechuga2.png" alt="Lechuga" draggable="true">
+                    <img id="producto3" class="filaLechuga" src="images/lechuga1.png" alt="Lechuga" draggable="true">
                 </div>
                 <div id="precio3">
                 </div>
-                <div>
-                    Cantidad a comprar (Ud):<input id="cantidad3" type="text" width="30%">
-                </div>
+
             </div>
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto4" src="images/cebolla2.png" alt="Cebolla" draggable="true">
+                    <img id="producto4" class="filaCebolla" src="images/cebolla1.png" alt="Cebolla" draggable="true">
                 </div>
                 <div id="precio4">
                 </div>
-                <div>
-                    Cantidad a comprar (Kg):<input id="cantidad4" type="text" width="30%">
-                </div>
+
             </div>
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto5" src="images/pepino2.png" alt="Pepino" draggable="true">
+                    <img id="producto5" class="filaPepino" src="images/pepino1.png" alt="Pepino" draggable="true">
                 </div>
                 <div id="precio5">
                 </div>
-                <div>
-                    Cantidad a comprar (Kg):<input id="cantidad5" type="text" width="30%">
-                </div>
+
             </div>
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto6" src="images/alcachofa2.png" alt="Alcachofa" draggable="true">
+                    <img id="producto6" class="filaAlcachofa" src="images/alcachofa1.png" alt="Alcachofa" draggable="true">
                 </div>
                 <div id="precio6">
                 </div>
-                <div>
-                    Cantidad a comprar (Kg):<input id="cantidad6" type="text" width="30%">
-                </div>
+
             </div>
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto7" src="images/champiñon2.png" alt="Champinyon" draggable="true">
+                    <img id="producto7" class="filaChampiñón" src="images/champiñon1.png" alt="Champinyon" draggable="true">
                 </div>
                 <div id="precio7">
                 </div>
-                <div>
-                    Cantidad a comprar (Kg):<input id="cantidad7" type="text" width="30%">
-                </div>
+
             </div>
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto8" src="images/esparrago2.png" alt="Esparrago" draggable="true">
+                    <img id="producto8" class="filaEspárrago" src="images/esparrago1.png" alt="Esparrago" draggable="true">
                 </div>
                 <div id="precio8">
                 </div>
-                <div>
-                    Cantidad a comprar (Kg):<input id="cantidad8" type="text" width="30%">
-                </div>
+
             </div>
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto9" src="images/colifor2.png" alt="Coliflor" draggable="true">
+                    <img id="producto9" class="filaColiflor" src="images/colifor1.png" alt="Coliflor" draggable="true">
                 </div>
                 <div id="precio9">
                 </div>
-                <div>
-                    Cantidad a comprar (Ud):<input id="cantidad9" type="text" width="30%">
-                </div>
+ 
             </div>
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto10" src="images/pimiento2.png" alt="Pimiento" draggable="true">
+                    <img id="producto10" class="filaPimiento" src="images/pimiento1.png" alt="Pimiento" draggable="true">
                 </div>
                 <div id="precio10">
                 </div>
-                <div>
-                    Cantidad a comprar (Kg):<input id="cantidad10" type="text" width="30%">
-                </div>
+
             </div>
-            <div class="producto">
+            <div class="producto col-lg-2 col-md-4 col-sm-6">
                 <div class="imagen">
-                    <img id="producto11" src="images/zanahoria2.png" alt="Zanahoria" draggable="true">
+                    <img id="producto11" class="filaZanahoria" src="images/zanahoria1.png" alt="Zanahoria" draggable="true">
                 </div>
                 <div id="precio11">
                 </div>
-                <div>
-                    Cantidad a comprar (Kg):<input id="cantidad11" type="text" width="30%">
-                </div>
+
             </div>
         </div>
     </div>
 
-<script src="./main.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
