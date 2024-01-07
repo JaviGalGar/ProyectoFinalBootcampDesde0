@@ -28,11 +28,11 @@
 
 ### Seguramente no está hecho para esto pero utilizo este último apartado del README para "hablar" con la/s persona/s que vayan a evaluar el proyecto.
 
-### El diseño es demasiado sencillo por decirlo de alguna manera. Al principio sí que dediqué tiempo a buscar imagenes y modificarles el tamaño con Photoshop para que fuese más fácil mostrarlas pero luego para el resto me ha faltado más "mimo", o lo que es lo mismo, haber tenido algo más de tiempo. Cosas como no haber sido capaz Sé que es una escusa pero lo cierto es que no he tenido el tiempo que me hubiese gustado y como se fue complicando la programación por mala planificación prioricé la funcionalidad al diseño.
+### El diseño es demasiado sencillo por decirlo de alguna manera. Al principio sí que dediqué tiempo a buscar imagenes y modificarles el tamaño con Photoshop para que fuese más fácil mostrarlas pero luego para el resto me ha faltado más "mimo", o lo que es lo mismo, haber tenido algo más de tiempo. Cosas como no haber sido capaz de dedicarle más tiempo a buscar una imagen, unas letras de título, etc. Sé que es una escusa pero lo cierto es que no he tenido el tiempo que me hubiese gustado y como se fue complicando la programación por mala planificación prioricé la funcionalidad al diseño.
 
-### Aunque no está especificado como tal en las peticiones de lo que se queréis que haga la tienda, soy también consciente de otros fallos: Puedo poner dos veces el mismo producto, puedo poner en la cantidad un número negativo...
+### Aunque no está especificado como tal en las peticiones de lo que queréis que haga la tienda, soy también consciente de otros fallos: Puedo poner dos veces el mismo producto, puedo poner en la cantidad un número negativo...
 
-### Tampoco he utilizar bien la herramienta Git y las ramas. Primero porque hay algunas cosas que no tengo claras y, además, el desarrollo que he llevado no hubiese facilitado su uso. Tengo claro que es muy mejorable y es algo que tengo que mirar bien.
+### Tampoco he utilizado bien la herramienta Git y las ramas. Primero porque hay algunas cosas que no tengo claras y, además, el desarrollo que he llevado no hubiese facilitado su uso. Tengo claro que es muy mejorable y es algo que tengo que mirar con mucho detenimiento.
 
 ### Envío el proyecto en este estado porque no sé hasta cuando tengo de tiempo para enviarlo y ya he conseguido un mínimo respecto a lo que pedís en el funcionamiento. A modo de aprendizaje sí quiero seguir mejorando el proyecto y, si es posible, os enviaré lo que haya cambiado para que podáis verlo.
 
