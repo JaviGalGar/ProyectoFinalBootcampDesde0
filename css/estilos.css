@@ -6,101 +6,142 @@ html {
     box-sizing: inherit;
 }
 .nombretienda {
+    display: grid;
+    grid-template-columns: 30fr 1fr 2fr;
+    grid-column-gap: 3px;
+    align-items: center;
+    background: #ffffff;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    color: rgb(131, 78, 17);
+}
+.resCesta, .subTotal {
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 2;
+}
+.resCesta {
+    right: 74px;
+}
+.subTotal{
+    right: 0;
+}
+.titulo, .resCesta, .subTotal{
+    background: #ffffff;
     text-align: center;
-    color: azure;
-    background-color: rgb(84, 196, 92);
-    padding: 20px 0;
+    height: 60px;
+}
+.SumSupCarrito{
+    display: grid;
+}
+.miniCarrito img{
+    width: 30px;
+}
+#numArt{
+    color:red;
+    font-weight: bold;
+}
+.fondo {
+    text-align: center;
+}
+.instrucciones {
+    align-items: center;
+    padding: 60px;
+    color: rgb(33, 129, 129);
 }
 .tienda {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    box-sizing: border-box;
+    position: relative;
+    grid-template-columns: minmax(150px, 1fr) minmax(300px, 5fr);
+    grid-template-rows: max-content max-content;
+    min-height: 100vh;
+    grid-template-areas:
+        "dejada ticketcompra"
+        "almacen almacen";
     justify-content: center;
-    align-items: center;
-    padding: 80px auto;
-    background-color: rgb(2, 44, 5);
-}
-.carrito {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(2, 44, 5);
-    border-radius: 10px;
     text-align: center;
-    position: sticky;
-    top: -1px;
 }
-.carrito img {
-    width: 140px;
+@media (width < 600px) {
+    .tienda {
+        grid-template-columns: 150px minmax(300, 1fr);
+        grid-template-rows: max-content max-content;
+        grid-template-areas:
+            "dejada ticketcompra"
+            "almacen almacen";
+    }
 }
+
 .ticketcompra img {
     width: 70px;
     padding: auto;
 }
+
 .almacen {
-    background-color: rgb(2, 44, 5);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px 0;
+    grid-area: almacen;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(300px, 1fr)
+    );
+    grid-auto-rows: 210px;
     gap: 20px;
+    padding: 50px 200px;
 }
 .producto {
-    background-color: rgb(227, 243, 165);
-    height: 160px;
-    width: 100px;
-    border-radius: 10px;
-    padding: 10px;
+    height: 178px;
+    width: 300px;
+    border: 2px solid rgb(233, 233, 233);
+    align-items: end;
+}
+.prize{
+    background-color: rgb(233, 233, 233);
 }
 .imagen img {
-    height: 120px;
+    height: 150px;
     object-fit: cover;
 }
 .precio {
     height: 20px;
 }
 body {
-    background-color: rgb(240, 193, 101);
+    background-color: white;
 }
 .hide {
     display: none;
 }
 #dejada {
-    background-color: aquamarine;
-    padding: 10px 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    grid-area: dejada;
+    background-color: rgb(213, 255, 242);
+    padding: 15px 10px;
     height: 170px;
     width: 170px;
     border-radius: 10px;
-    overflow: hidden;
-    align-items: center;
 }
 #dejada img {
-    width: 70;
+    width: 140px;
 }
-#eliminar {
-    background-color: rgb(227, 243, 165);
-    height: 170px; 
-    width: 170px;  
-    border-radius: 10px;
-    align-items: center;
+
+#eliminar img {
+    width: 60px;
+    height: 60px;
+}
+.ticketcompra{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    grid-area: ticketcompra;
 }
 #displaycompra {
-    background-color: rgb(227, 243, 165);
+    width: 40%;
     height: auto;
-    border: 2px solid rgb(230, 100, 7);
-    overflow: hidden;
-}
-.instrucciones {
-    background-color: rgb(2, 44, 5);
-    color: azure;
-    padding: 60px;
 }
 table {
     width: 100%;
+    height: 100%;
 }
