@@ -8,35 +8,46 @@
     <title>Proyecto tienda</title>
 </head>
 <body>
-    <div class="nombretienda container-fluid">
-        <h1>Del campo a la casa</h1>
-    </div>
-    <div class="instrucciones">
-        <h5>
-            
-            
-            <p>Para comprar, simplemente arrastra el producto hasta la zona de compra de color azul celeste.</p>
-            <p>Una vez en la cesta selecciona la cantidad de producto que quieres adquirir (en el precio puedes ver si se vende por unidades o por Kg).</p>
-            <p>Si quieres quitar algún producto puedes arrastrarlo hasta la papelera.</p>
-        
-        
-        </h5>
-    </div>
-    <div class="tienda container-fluid">
-        <div class="row carrito container-fluid justify-content-center">
-                <div id="dejada" class="col-4 col-md-2 justify-content-center align-items-center">
-                    <img id="carrito" src="images/carrito.png" alt="Cesta compra">
-                </div>
-                <div id="eliminar" class="col-4 col-md-2 justify-content-center align-items-center">
-                    <img id="papelera" src="images/papelera.png" alt="Papelera">
-                </div>
-                        
+    <div class="nombretienda">
+        <div class="titulo">
+            <h1>      Del campo a la casa</h1>
         </div>
+        <div class="resCesta">
+            <div id="numArt">
+                0 
+            </div>
+            <div class="miniCarrito">
+                <img id="carritoSup" src="images/carrito.png">
+            </div>
+        </div>
+        <div class="subTotal">
+            <div><b>Subtotal:</b></div>
+            <div id="visorPrecio">0€</div>
+        </div>
+    </div>
+
+    <div class="fondo">
+        <img alt="Verduras" src="images/fondo.jpg">
+    </div>
+
+    <div class="instrucciones">
+            <div><p>Para comprar, simplemente arrastra el producto hasta la zona de compra de color azul celeste.</p></div>
+            <div><p>Una vez en la cesta selecciona la cantidad de producto que quieres adquirir (en el precio puedes ver si se vende por unidades o por Kg).</p></div>
+            <div><p>Si quieres quitar algún producto puedes arrastrarlo hasta la papelera.</p></div>
+    </div>
+    <div class="tienda">
+        
+        <div id="dejada">
+            <img id="carrito" src="images/carrito.png" alt="Cesta compra">
+        </div>
+
         <div class="ticketcompra">
             <div id="displaycompra">
                 <table id="tablacompra" class="table table-success table-striped table-hover justify-content-center align-items-center">
                     <tr class="primeraFila">
-                        <th scope="col"></td>
+                        <th scope="col"><div id="eliminar">
+                            <img id="papelera" src="images/papelera.png" alt="Papelera">
+                        </div></td>
                         <th scope="col">Producto</td>
                         <th scope="col">Cantidad</td>
                         <th scope="col">Precio</td>
@@ -49,96 +60,98 @@
                         <td></td>
                         <th>Precio total:</th>
                         <td id="Sumatorio"> 0€ </td>
+                        <td></td>
                     </tr> 
                 </table>
             </div>    
         </div>
-        <div class="row almacen row-cols-2 row-cols-md-6 row-cols-xxl-12">
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+
+        <div class="almacen">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto1" class="filaTomate" src="images/tomate1.png" alt="Tomate" draggable="true">
                 </div>
-                <div id="precio1">
+                <div class="prize" id="precio1">
                 </div>
             </div>
 
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto2" class="filaPatata" src="images/patata1.png" alt="Patata" draggable="true">
                 </div>
-                <div id="precio2">
+                <div class="prize" id="precio2">
                 </div>
 
             </div>
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto3" class="filaLechuga" src="images/lechuga1.png" alt="Lechuga" draggable="true">
                 </div>
-                <div id="precio3">
+                <div class="prize" id="precio3">
                 </div>
 
             </div>
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto4" class="filaCebolla" src="images/cebolla1.png" alt="Cebolla" draggable="true">
                 </div>
-                <div id="precio4">
+                <div class="prize" id="precio4">
                 </div>
 
             </div>
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto5" class="filaPepino" src="images/pepino1.png" alt="Pepino" draggable="true">
                 </div>
-                <div id="precio5">
+                <div class="prize" id="precio5">
                 </div>
 
             </div>
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto6" class="filaAlcachofa" src="images/alcachofa1.png" alt="Alcachofa" draggable="true">
                 </div>
-                <div id="precio6">
+                <div class="prize" id="precio6">
                 </div>
 
             </div>
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto7" class="filaChampiñón" src="images/champiñon1.png" alt="Champinyon" draggable="true">
                 </div>
-                <div id="precio7">
+                <div class="prize" id="precio7">
                 </div>
 
             </div>
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto8" class="filaEspárrago" src="images/esparrago1.png" alt="Esparrago" draggable="true">
                 </div>
-                <div id="precio8">
+                <div class="prize" id="precio8">
                 </div>
 
             </div>
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto9" class="filaColiflor" src="images/colifor1.png" alt="Coliflor" draggable="true">
                 </div>
-                <div id="precio9">
+                <div class="prize" id="precio9">
                 </div>
  
             </div>
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto10" class="filaPimiento" src="images/pimiento1.png" alt="Pimiento" draggable="true">
                 </div>
-                <div id="precio10">
+                <div class="prize" id="precio10">
                 </div>
 
             </div>
-            <div class="producto col-lg-2 col-md-4 col-sm-6">
+            <div class="producto">
                 <div class="imagen">
                     <img id="producto11" class="filaZanahoria" src="images/zanahoria1.png" alt="Zanahoria" draggable="true">
                 </div>
-                <div id="precio11">
+                <div class="prize" id="precio11">
                 </div>
 
             </div>

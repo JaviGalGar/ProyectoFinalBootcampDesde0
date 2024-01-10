@@ -79,7 +79,7 @@ let arrayCost = new Array(listaProductos.length);
 for(let i = 1; i <= listaProductos.length; i++){
     arrayCost[i-1] = 0;
 }
-
+let numArticulos = 0;
 /*Poner artículos en la cesta*/
 
 const productos = [...document.querySelectorAll(".imagen")];
@@ -116,15 +116,15 @@ function drop(e) {
     const draggable = document.getElementById(idcopiada);
     const idcomprada = draggable.id;
     const pruebaid = idcomprada.replace("producto", "product");
-    console.log("pruebaid: " + pruebaid);
     const numid = idcomprada.slice(-1);
 
+    const yeah = document.getElementById(pruebaid);
     const lista = document.getElementById("tablacompra");
 
+    if (yeah === null) {
     for(let i = 1; i <= listaProductos.length; i++) {
 
         if (idcomprada === listaProductos[i-1].id) {
-            console.log("idcomprada = " + idcomprada);
             const nuevaid = draggable.outerHTML.replace("producto", "product");
             const precioind = listaProductos[i-1].precio;
 
@@ -138,14 +138,25 @@ function drop(e) {
 
             newRow.innerHTML = `<td>${nuevaid}</td>
             <td>${listaProductos[i-1].nombre}</td>
-            <td><input id="${newInputId}" type="text" onChange="calculodinero(this.value,${precioind},${newCostId},${numid})"></td>
+            <td><input id="${newInputId}" type="number" value="1" min="0" onChange="calculodinero(this.value,${precioind},${newCostId},${numid})"></td>
             <td>${precioind} €/${listaProductos[i-1].cantidad}</td>
-            <td id="${newCostId}" class"productcost">${(precioind * 0).toFixed(2)}€</td>`;
+            <td id="${newCostId}" class"productcost">${(precioind * 1).toFixed(2)}€</td>`;
 
             /*Crear eventListener al meter en la cesta*/
             const draggable2 = document.getElementById(pruebaid);
             draggable2.addEventListener('dragstart', dragStart2);
+            
+            /*Suma 1 al número total de artículos en la cesta*/
+            numArticulos += 1;
+            const totalArt = document.getElementById("numArt");
+            totalArt.value = numArticulos;
+            totalArt.innerText = numArticulos;
+
+            /*llamada a primera actualización de precio con el valor inicial del input que es 1*/
+            arrayCost[numid-1] = precioind*1;
+            actualizaPrecio();
         }
+    }
     }
 }
 
@@ -168,6 +179,10 @@ function actualizaPrecio() {
     const totalSum = document.getElementById("Sumatorio");
     totalSum.value = totalCost;
     totalSum.innerText = totalCost + "€";
+
+    const totalSum2 = document.getElementById("visorPrecio");
+    totalSum2.value = totalCost;
+    totalSum2.innerText = totalCost + "€";
 }
 
 /*Quitar artículos de la cesta*/
@@ -210,6 +225,12 @@ function drop2(e) {
 
     /*Actualizar array de coste de productos*/
     arrayCost[idborrada2-1] = 0;
+
+    /*Quitar un elemento del total de articulos en cesta*/
+    numArticulos = numArticulos - 1;
+    const totalArt2 = document.getElementById("numArt");
+    totalArt2.value = numArticulos;
+    totalArt2.innerText = numArticulos;
 
     actualizaPrecio()
 
